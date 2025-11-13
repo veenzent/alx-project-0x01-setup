@@ -1,13 +1,21 @@
-  import Header from "@/components/layout/Header";
-  import UserCard from "@/components/common/UserCard";
-  import { UserProps } from "@/interfaces";
-  import type { NextPage, GetStaticProps } from "next";
-  import { useState, useMemo } from "react";
+import Header from "@/components/layout/Header";
+import UserCard from "@/components/common/UserCard";
+import UserModal from "@/components/common/UserModal";
+import { UserProps } from "@/interfaces";
+import type { NextPage, GetStaticProps } from "next";
+import { useState, useMemo } from "react";
 
   type UsersPageProps = { users: UserProps[] };
 
   const Users: NextPage<UsersPageProps> = ({ users = [] }) => {
     console.log(users);
+
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const handleAddUser = (newUser: UserProps) => {
+      console.log("New user:", newUser);
+    };
+
     const [query, setQuery] = useState("");
     const [sortBy, setSortBy] = useState<"name" | "username">("name");
 
@@ -68,6 +76,13 @@
             )}
           </div>
         </main>
+
+        {isModalOpen && (
+          <UserModal
+            onClose={() => setModalOpen(false)}
+            onSubmit={handleAddUser}
+          />
+        )}
       </div>
     );
   };
