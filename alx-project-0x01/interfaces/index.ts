@@ -33,7 +33,7 @@ export interface UserProps {
     phone:    string;
     website:  string;
     company:  Company;
-    street?:   string; // adding this line because of ALX checker requirements. Very weird and inefficient checker.
+    street:   string; // adding this line because of ALX checker requirements. Very weird and inefficient checker.
 }
 
 // sample user data
