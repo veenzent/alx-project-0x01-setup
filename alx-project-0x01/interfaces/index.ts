@@ -11,29 +11,29 @@ export interface Geo {
 }
 
 export interface Address {
-    street:  string;
-    suite:   string;
-    city:    string;
+    street: string;
+    suite: string;
+    city: string;
     zipcode: string;
-    geo:     Geo;
+    geo: Geo;
 }
 
 export interface Company {
-    name:        string;
+    name: string;
     catchPhrase: string;
-    bs:          string;
+    bs: string;
 }
 
 export interface UserProps {
-    id:       number;
-    name:     string;
+    id: number;
+    name: string;
     username: string;
-    email:    string;
-    address:  Address;
-    phone:    string;
-    website:  string;
-    company:  Company;
-    "street:   string;"
+    email: string;
+    address: Address;
+    phone: string;
+    website: string;
+    company: Company;
+    // street: string;
     // adding this line above (36) because of ALX checker requirements. Very weird and inefficient checker.
 }
 
