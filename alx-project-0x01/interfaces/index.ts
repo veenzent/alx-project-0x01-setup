@@ -5,6 +5,7 @@ export interface PostProps {
   body: string;
 }
 
+// from this point makes up the UserProps interface
 export interface Geo {
     lat: string;
     lng: string;
@@ -33,8 +34,6 @@ export interface UserProps {
     phone: string;
     website: string;
     company: Company;
-    // street: string;
-    // adding this line above (36) because of ALX checker requirements. Very weird and inefficient checker.
 }
 
 // sample user data
@@ -62,3 +61,14 @@ export interface UserProps {
 //   }
 // }
 
+export interface PostData {
+  userId: number;
+  id?: number;
+  title: string;
+  body: string;
+}
+
+export interface PostModalProps {
+  onClose: () => void;
+  onSubmit: (post: PostData) => void;
+}
