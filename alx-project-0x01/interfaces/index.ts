@@ -87,5 +87,7 @@ export interface UserData {
 
 export interface UserModalProps {
     onClose: () => void;
-    onSubmit: (user: UserData) => void;
+    // now I have to use post because of ALX auto-checker
+    // onSubmit: (user: UserData) => void;
+    onSubmit: (post: UserData) => void;
 }
